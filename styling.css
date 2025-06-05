@@ -1,0 +1,156 @@
+/* styling.css - Updated for site-wide gradient background and responsiveness (with card text color fix) */
+
+/* 1. Global reset and default styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  /* site-wide gradient background */
+  background: linear-gradient(135deg, #8ccdf9, #8e44ad);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Let <main> grow to push footer to bottom */
+main {
+  flex: 1;
+}
+
+/* 2. Navbar styling - preserve Bootstrap responsiveness */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.navbar-brand,
+h1, h2, h3 {
+  color: #2c3e50;
+}
+
+/* Ensure toggler icon visible on light background */
+.navbar-light .navbar-toggler-icon {
+  filter: invert(0.5);
+}
+
+/* 3. Card and shadow effects, plus ensure dark text inside cards */
+.card,
+.shadow {
+  transition: all 0.3s ease-in-out;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  color: #333;
+}
+.card:hover,
+.shadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Ensure card-body text is dark */
+.card-body {
+  color: #333;
+}
+
+/* 4. Buttons */
+.btn-primary {
+  background-color: #3498db;
+  border-color: #3498db;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 5. Images */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border: 5px solid #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 50%; /* combine rounded-circle here */
+}
+
+/* 6. Typography */
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+/* 7. Content wrappers */
+.content-wrapper {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 100%; /* ensure no overflow */
+  color: #333;
+}
+
+/* 8. Project cards flex layout */
+.project-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.project-card .card-body {
+  flex-grow: 1;
+  color: #333;
+}
+
+/* 9. Contact styles */
+.contact-form {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #333; /* override to dark text inside form */
+}
+.contact-info {
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  height: 100%;
+  max-width: 100%;
+}
+.contact-info h3 {
+  color: #fff;
+}
+.contact-info ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.contact-info ul li {
+  margin-bottom: 10px;
+}
+
+/* 10. Footer styling - responsive padding instead of fixed height */
+.site-footer, footer {
+  border-top: 1px solid #ddd;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 1rem 0;
+  text-align: center;
+}
+.site-footer p, footer p {
+  margin: 0;
+}
+
+/* 11. Responsive tweaks */
+@media (max-width: 767.98px) {
+  .navbar-light .navbar-brand,
+  .navbar-light .nav-link {
+    color: #2c3e50;
+  }
+  .img-fluid {
+    border-width: 3px;
+  }
+  .contact-form, .contact-info {
+    padding: 20px;
+  }
+}
